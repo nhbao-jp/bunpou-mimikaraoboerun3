@@ -125,6 +125,10 @@
     answerToast.classList.remove("alert-success", "alert-warning", "answer-toast-visible");
   }
 
+  function hideNotifications() {
+    hideAnswerToast();
+  }
+
   function showAnswerToast(correct) {
     window.clearTimeout(answerToastTimeout);
     answerToast.classList.remove("alert-success", "alert-warning", "answer-toast-visible");
@@ -144,7 +148,7 @@
   }
 
   function setPage(page) {
-    hideAnswerToast();
+    hideNotifications();
     state.page = page;
     pageButtons.forEach((button) => {
       const active = button.dataset.page === page;
@@ -158,7 +162,7 @@
   function navigate(delta) {
     const nextIndex = state.index + delta;
     if (nextIndex < 0 || nextIndex >= state.items.length) return;
-    hideAnswerToast();
+    hideNotifications();
     state.index = nextIndex;
     resetPractice();
     render();
@@ -274,10 +278,6 @@
     const grammar = item.grammar.length
       ? item.grammar.map((value) => `<span class="grammar-chip">${escapeHtml(value)}</span>`).join("")
       : `<span class="grammar-chip">文法データがありません</span>`;
-    const meaning = state.checked
-      ? (state.evaluation?.variant?.meaningVietnamese ?? item.meaningVietnamese ?? "ベトナム語の意味がありません。")
-      : "";
-
     return `
       <article class="card lesson-card practice-card">
         <div class="card-body">
@@ -332,7 +332,6 @@
             </section>
           </div>
 
-          ${state.checked ? `<div class="meaning-box mt-3"><span class="fw-semibold">意味（ベトナム語）:</span> ${escapeHtml(meaning)}</div>` : ""}
           <div class="d-flex flex-wrap align-items-center gap-2 mt-4">
             <button class="btn btn-primary rounded-pill px-4" type="button" data-action="check" ${state.checked ? "disabled" : ""}>答え合わせ <span class="ms-1">↵</span></button>
             ${state.checked && !state.correct ? `<button class="btn btn-outline-primary rounded-pill px-4" type="button" data-action="repair">答えを修正 <span class="ms-1">Space</span></button>` : ""}
@@ -487,7 +486,10 @@
       && (target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName));
     if (isEditable || event.altKey || event.ctrlKey || event.metaKey) return;
 
-    if (event.key === "ArrowRight") {
+    if (event.key === "Tab") {
+      event.preventDefault();
+      setPage(state.page === "practice" ? "study" : "practice");
+    } else if (event.key === "ArrowRight") {
       if (state.index < state.items.length - 1) {
         event.preventDefault();
         navigate(1);
