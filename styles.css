@@ -194,16 +194,23 @@ body {
   box-shadow: 0 0 0 0.15rem #5546c733;
 }
 
-.answer-toast {
+.notification-stack {
   position: fixed;
   z-index: 1080;
   top: 1rem;
   left: 50%;
   width: min(36rem, calc(100vw - 2rem));
-  transform: translate(-50%, -0.75rem);
-  opacity: 0;
-  text-align: center;
+  display: grid;
+  gap: 0.5rem;
+  transform: translateX(-50%);
   pointer-events: none;
+}
+
+.answer-toast {
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-0.5rem);
   transition: opacity 160ms ease, transform 160ms ease;
 }
 
@@ -212,7 +219,7 @@ body {
 }
 
 .answer-toast-visible {
-  transform: translate(-50%, 0);
+  transform: translateY(0);
   opacity: 1;
 }
 
