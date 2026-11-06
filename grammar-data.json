@@ -216,64 +216,66 @@
   {
     "id": "10",
     "structures": [
-      "Vば + たい hoặc のに hoặc よかった など",
-      "Vたら + たい hoặc のに hoặc よかった など",
-      "Vと + たい hoặc のに hoặc よかった など"
+      "Vば + いいのに",
+      "Vたら + いいのに",
+      "Vと + いいのに",
+      "Vば + よかった",
+      "Vたら + よかった"
     ],
     "grammar": [
-      "ば",
-      "たら",
-      "と + たい",
-      "のに",
-      "よかった など"
+      "ばいいのに",
+      "たらいいのに",
+      "といいのに",
+      "ばよかった",
+      "たらよかった"
     ],
-    "meaningVietnamese": "Giá mà…, nếu… thì tốt biết mấy",
+    "meaningVietnamese": "Ước gì…; tiếc là đã… (tùy dạng điều kiện và thời điểm)",
     "variants": [
       {
-        "originalStructure": "Vば + たい hoặc のに hoặc よかった など",
+        "originalStructure": "Vば + いいのに",
         "before": "Vば",
-        "grammarCore": [
-          "たい",
-          "のに",
-          "よかった"
-        ],
-        "after": "など"
+        "grammarCore": "いい",
+        "after": "のに"
       },
       {
-        "originalStructure": "Vたら + たい hoặc のに hoặc よかった など",
+        "originalStructure": "Vたら + いいのに",
         "before": "Vたら",
-        "grammarCore": [
-          "たい",
-          "のに",
-          "よかった"
-        ],
-        "after": "など"
+        "grammarCore": "いい",
+        "after": "のに"
       },
       {
-        "originalStructure": "Vと + たい hoặc のに hoặc よかった など",
+        "originalStructure": "Vと + いいのに",
         "before": "Vと",
-        "grammarCore": [
-          "たい",
-          "のに",
-          "よかった"
-        ],
-        "after": "など"
+        "grammarCore": "いい",
+        "after": "のに"
+      },
+      {
+        "originalStructure": "Vば + よかった",
+        "before": "Vば",
+        "grammarCore": "よかった",
+        "after": ""
+      },
+      {
+        "originalStructure": "Vたら + よかった",
+        "before": "Vたら",
+        "grammarCore": "よかった",
+        "after": ""
       }
     ]
   },
   {
     "id": "13",
     "structures": [
-      "Vます bỏ ます + み"
+      "いA bỏ い + み"
     ],
     "grammar": [
       "み"
     ],
-    "meaningVietnamese": "Chuyển tính từ hoặc động từ thành danh từ chỉ cảm giác, đặc điểm hoặc mức độ",
+    "meaningVietnamese": "Danh từ chỉ cảm giác, đặc điểm hoặc mức độ; chỉ dùng với một số từ",
     "variants": [
       {
-        "originalStructure": "Vます bỏ ます + み",
-        "before": "Vます bỏ ます",
+        "originalStructure": "いA bỏ い + み",
+        "before": "いA bỏ い",
         "grammarCore": "み",
         "after": ""
       }
@@ -283,11 +285,11 @@
     "id": "14",
     "structures": [
       "V普通形 + のではないだろうか",
-      "V普通形 + ないかと思う"
+      "Vない + かと思う"
     ],
     "grammar": [
       "のではないだろうか",
-      "ないかと思う"
+      "かと思う"
     ],
     "meaningVietnamese": "Có lẽ là, tôi nghĩ rằng; cách nêu suy đoán hoặc ý kiến dè dặt",
     "variants": [
@@ -298,9 +300,9 @@
         "after": ""
       },
       {
-        "originalStructure": "V普通形 + ないかと思う",
-        "before": "V普通形",
-        "grammarCore": "ないかと思う",
+        "originalStructure": "Vない + かと思う",
+        "before": "Vない",
+        "grammarCore": "かと思う",
         "after": ""
       }
     ]
@@ -308,16 +310,16 @@
   {
     "id": "16",
     "structures": [
-      "N + から + N + にかけて"
+      "N1 + から + N2 + にかけて"
     ],
     "grammar": [
-      "N + からにかけて"
+      "から〜にかけて"
     ],
     "meaningVietnamese": "Từ… đến…, trong khoảng…",
     "variants": [
       {
-        "originalStructure": "N + から + N + にかけて",
-        "before": "N + から + N",
+        "originalStructure": "N1 + から + N2 + にかけて",
+        "before": "N1 + から + N2",
         "grammarCore": "にかけて",
         "after": ""
       }
@@ -354,8 +356,8 @@
     "variants": [
       {
         "originalStructure": "N + のおかげで",
-        "before": "N",
-        "grammarCore": "のおかげ",
+        "before": "N + の",
+        "grammarCore": "おかげ",
         "after": "で"
       },
       {
@@ -379,8 +381,8 @@
     "variants": [
       {
         "originalStructure": "N + のせいで",
-        "before": "N",
-        "grammarCore": "のせい",
+        "before": "N + の",
+        "grammarCore": "せい",
         "after": "で"
       },
       {
@@ -447,7 +449,7 @@
         "before": "N",
         "grammarCore": "につき",
         "after": "",
-        "meaningVietnamese": "Mỗi, trên mỗi (tùy cách dùng)"
+        "meaningVietnamese": "Mỗi, trên mỗi (ví dụ: 一人につき)"
       }
     ]
   },
@@ -551,21 +553,37 @@
   {
     "id": "27",
     "structures": [
-      "たとえ + Vて hoặc いAくて hoặc なAで hoặc Nで + も"
+      "たとえ + Vて + も",
+      "たとえ + いAくて + も",
+      "たとえ + なAで + も",
+      "たとえ + Nで + も"
     ],
     "grammar": [
-      "たとえても"
+      "たとえ〜ても"
     ],
     "meaningVietnamese": "Dù cho…, cho dù…",
     "variants": [
       {
-        "originalStructure": "たとえ + Vて hoặc いAくて hoặc なAで hoặc Nで + も",
-        "before": [
-          "たとえ + Vて",
-          "いAくて",
-          "なAで",
-          "Nで"
-        ],
+        "originalStructure": "たとえ + Vて + も",
+        "before": "たとえ + Vて",
+        "grammarCore": "も",
+        "after": ""
+      },
+      {
+        "originalStructure": "たとえ + いAくて + も",
+        "before": "たとえ + いAくて",
+        "grammarCore": "も",
+        "after": ""
+      },
+      {
+        "originalStructure": "たとえ + なAで + も",
+        "before": "たとえ + なAで",
+        "grammarCore": "も",
+        "after": ""
+      },
+      {
+        "originalStructure": "たとえ + Nで + も",
+        "before": "たとえ + Nで",
         "grammarCore": "も",
         "after": ""
       }
@@ -632,7 +650,8 @@
   {
     "id": "30",
     "structures": [
-      "Vる + くらいなら"
+      "Vる + くらいなら",
+      "Vる + ぐらいなら"
     ],
     "grammar": [
       "くらいなら",
@@ -644,6 +663,12 @@
         "originalStructure": "Vる + くらいなら",
         "before": "Vる",
         "grammarCore": "くらいなら",
+        "after": ""
+      },
+      {
+        "originalStructure": "Vる + ぐらいなら",
+        "before": "Vる",
+        "grammarCore": "ぐらいなら",
         "after": ""
       }
     ]
@@ -833,7 +858,7 @@
       "によって",
       "によっては"
     ],
-    "meaningVietnamese": "Do, bởi…",
+    "meaningVietnamese": "Do/bởi, bằng, hoặc tùy theo (nghĩa cụ thể phụ thuộc mẫu và ngữ cảnh)",
     "variants": [
       {
         "originalStructure": "N + による",
@@ -846,7 +871,7 @@
         "before": "N",
         "grammarCore": "より",
         "after": "",
-        "meaningVietnamese": "Do, bởi…"
+        "meaningVietnamese": "Do/bởi trong một số cách dùng; cần phân biệt với より nghĩa là “hơn/từ”"
       },
       {
         "originalStructure": "N + によって",
@@ -956,7 +981,9 @@
     "id": "43",
     "structures": [
       "Vる + にしたがって",
-      "N + にしたがって"
+      "Vる + にしたがい",
+      "N + にしたがって",
+      "N + にしたがい"
     ],
     "grammar": [
       "にしたがって",
@@ -971,9 +998,21 @@
         "after": ""
       },
       {
+        "originalStructure": "Vる + にしたがい",
+        "before": "Vる",
+        "grammarCore": "にしたがい",
+        "after": ""
+      },
+      {
         "originalStructure": "N + にしたがって",
         "before": "N",
         "grammarCore": "にしたがって",
+        "after": ""
+      },
+      {
+        "originalStructure": "N + にしたがい",
+        "before": "N",
+        "grammarCore": "にしたがい",
         "after": ""
       }
     ]
@@ -1378,12 +1417,18 @@
   {
     "id": "59",
     "structures": [
-      "Vる + ところに",
-      "Vる + ところへ",
-      "Vる + ところを",
-      "Vる + ところで",
-      "Vている + ところに hoặc へ hoặc を hoặc で",
-      "Vた + ところに hoặc へ hoặc を hoặc で"
+      "Vる + ところ + に",
+      "Vる + ところ + へ",
+      "Vる + ところ + を",
+      "Vる + ところ + で",
+      "Vている + ところ + に",
+      "Vている + ところ + へ",
+      "Vている + ところ + を",
+      "Vている + ところ + で",
+      "Vた + ところ + に",
+      "Vた + ところ + へ",
+      "Vた + ところ + を",
+      "Vた + ところ + で"
     ],
     "grammar": [
       "ところに",
@@ -1391,53 +1436,79 @@
       "ところを",
       "ところで"
     ],
-    "meaningVietnamese": "Đúng lúc…, vào lúc…; diễn tả thời điểm một hành động hoặc sự việc xảy ra",
+    "meaningVietnamese": "Đúng lúc…; trợ từ sau ところ tùy theo quan hệ và cách dùng trong câu",
     "variants": [
       {
-        "originalStructure": "Vる + ところに",
+        "originalStructure": "Vる + ところ + に",
         "before": "Vる",
         "grammarCore": "ところ",
         "after": "に"
       },
       {
-        "originalStructure": "Vる + ところへ",
+        "originalStructure": "Vる + ところ + へ",
         "before": "Vる",
         "grammarCore": "ところ",
         "after": "へ"
       },
       {
-        "originalStructure": "Vる + ところを",
+        "originalStructure": "Vる + ところ + を",
         "before": "Vる",
         "grammarCore": "ところ",
         "after": "を"
       },
       {
-        "originalStructure": "Vる + ところで",
+        "originalStructure": "Vる + ところ + で",
         "before": "Vる",
         "grammarCore": "ところ",
         "after": "で"
       },
       {
-        "originalStructure": "Vている + ところに hoặc へ hoặc を hoặc で",
+        "originalStructure": "Vている + ところ + に",
         "before": "Vている",
         "grammarCore": "ところ",
-        "after": [
-          "に",
-          "へ",
-          "を",
-          "で"
-        ]
+        "after": "に"
       },
       {
-        "originalStructure": "Vた + ところに hoặc へ hoặc を hoặc で",
+        "originalStructure": "Vている + ところ + へ",
+        "before": "Vている",
+        "grammarCore": "ところ",
+        "after": "へ"
+      },
+      {
+        "originalStructure": "Vている + ところ + を",
+        "before": "Vている",
+        "grammarCore": "ところ",
+        "after": "を"
+      },
+      {
+        "originalStructure": "Vている + ところ + で",
+        "before": "Vている",
+        "grammarCore": "ところ",
+        "after": "で"
+      },
+      {
+        "originalStructure": "Vた + ところ + に",
         "before": "Vた",
         "grammarCore": "ところ",
-        "after": [
-          "に",
-          "へ",
-          "を",
-          "で"
-        ]
+        "after": "に"
+      },
+      {
+        "originalStructure": "Vた + ところ + へ",
+        "before": "Vた",
+        "grammarCore": "ところ",
+        "after": "へ"
+      },
+      {
+        "originalStructure": "Vた + ところ + を",
+        "before": "Vた",
+        "grammarCore": "ところ",
+        "after": "を"
+      },
+      {
+        "originalStructure": "Vた + ところ + で",
+        "before": "Vた",
+        "grammarCore": "ところ",
+        "after": "で"
       }
     ]
   },
@@ -1491,10 +1562,11 @@
     "id": "62",
     "structures": [
       "Vば + Vる + ほど",
-      "いAければ + いAほど"
+      "いAければ + いAい + ほど"
     ],
     "grammar": [
-      "ばほど"
+      "ば〜ほど",
+      "ければ〜いほど"
     ],
     "meaningVietnamese": "Càng… càng…",
     "variants": [
@@ -1505,8 +1577,8 @@
         "after": ""
       },
       {
-        "originalStructure": "いAければ + いAほど",
-        "before": "いAければ + いA",
+        "originalStructure": "いAければ + いAい + ほど",
+        "before": "いAければ + いAい",
         "grammarCore": "ほど",
         "after": ""
       }
@@ -1578,8 +1650,8 @@
       "V普通形 + なんて + 言う hoặc 思う"
     ],
     "grammar": [
-      "などと（なんて）言う",
-      "思う など"
+      "などと",
+      "なんて"
     ],
     "meaningVietnamese": "Nói hoặc nghĩ những điều như…, cho rằng…",
     "variants": [
@@ -1867,7 +1939,9 @@
   {
     "id": "77",
     "structures": [
-      "V普通形 + っけ"
+      "Vた + っけ",
+      "いAかった + っけ",
+      "なA／N + だった + っけ"
     ],
     "grammar": [
       "っけ"
@@ -1875,8 +1949,26 @@
     "meaningVietnamese": "Dùng để nhớ lại hoặc xác nhận điều gì đó: nhỉ?, ấy nhỉ?",
     "variants": [
       {
-        "originalStructure": "V普通形 + っけ",
-        "before": "V普通形",
+        "originalStructure": "Vた + っけ",
+        "before": "Vた",
+        "grammarCore": "っけ",
+        "after": ""
+      },
+      {
+        "originalStructure": "いAかった + っけ",
+        "before": "いAかった",
+        "grammarCore": "っけ",
+        "after": ""
+      },
+      {
+        "originalStructure": "なA + だった + っけ",
+        "before": "なA + だった",
+        "grammarCore": "っけ",
+        "after": ""
+      },
+      {
+        "originalStructure": "N + だった + っけ",
+        "before": "N + だった",
         "grammarCore": "っけ",
         "after": ""
       }
@@ -2150,7 +2242,7 @@
     ],
     "grammar": [
       "にかわって",
-      "かわりに"
+      "にかわり"
     ],
     "meaningVietnamese": "Thay mặt…, thay thế cho…",
     "variants": [
@@ -2232,7 +2324,9 @@
   {
     "id": "91",
     "structures": [
-      "V普通形 + からといって"
+      "V普通形 + からといって",
+      "いA + からといって",
+      "なA／N + だからといって"
     ],
     "grammar": [
       "からといって"
@@ -2242,6 +2336,24 @@
       {
         "originalStructure": "V普通形 + からといって",
         "before": "V普通形",
+        "grammarCore": "からといって",
+        "after": ""
+      },
+      {
+        "originalStructure": "いA + からといって",
+        "before": "いA",
+        "grammarCore": "からといって",
+        "after": ""
+      },
+      {
+        "originalStructure": "なA + だ + からといって",
+        "before": "なA + だ",
+        "grammarCore": "からといって",
+        "after": ""
+      },
+      {
+        "originalStructure": "N + だ + からといって",
+        "before": "N + だ",
         "grammarCore": "からといって",
         "after": ""
       }
@@ -2387,29 +2499,49 @@
   {
     "id": "96",
     "structures": [
-      "Vれる hoặc られる (thể bị động)"
+      "五段動詞: Vない形 bỏ ない + れる",
+      "一段動詞: Vる bỏ る + られる",
+      "する + される",
+      "来る + 来られる"
     ],
     "grammar": [
-      "れる",
-      "られる"
+      "れる／られる (thể bị động)"
     ],
-    "meaningVietnamese": "Được…, bị…; diễn tả hành động bị động",
+    "meaningVietnamese": "Được/bị…; cách chia phụ thuộc nhóm động từ",
     "variants": [
       {
-        "originalStructure": "Vれる hoặc られる (thể bị động)",
-        "before": "V",
-        "grammarCore": [
-          "れる",
-          "られる"
-        ],
-        "after": "(thể bị động)"
+        "originalStructure": "五段動詞: Vない形 bỏ ない + れる",
+        "before": "Vない形 bỏ ない",
+        "grammarCore": "れる",
+        "after": ""
+      },
+      {
+        "originalStructure": "一段動詞: Vる bỏ る + られる",
+        "before": "Vる bỏ る",
+        "grammarCore": "られる",
+        "after": ""
+      },
+      {
+        "originalStructure": "する + される",
+        "before": "する",
+        "grammarCore": "される",
+        "after": ""
+      },
+      {
+        "originalStructure": "来る + 来られる",
+        "before": "来る",
+        "grammarCore": "られる",
+        "after": ""
       }
     ]
   },
   {
     "id": "97",
     "structures": [
-      "Vて + たまらない"
+      "Vて + たまらない",
+      "Vたくて + たまらない",
+      "いAくて + たまらない",
+      "なAで + たまらない"
     ],
     "grammar": [
       "たまらない"
@@ -2421,13 +2553,34 @@
         "before": "Vて",
         "grammarCore": "たまらない",
         "after": ""
+      },
+      {
+        "originalStructure": "Vたくて + たまらない",
+        "before": "Vたくて",
+        "grammarCore": "たまらない",
+        "after": ""
+      },
+      {
+        "originalStructure": "いAくて + たまらない",
+        "before": "いAくて",
+        "grammarCore": "たまらない",
+        "after": ""
+      },
+      {
+        "originalStructure": "なAで + たまらない",
+        "before": "なAで",
+        "grammarCore": "たまらない",
+        "after": ""
       }
     ]
   },
   {
     "id": "98",
     "structures": [
-      "Vて + ならない"
+      "Vて + ならない",
+      "Vたくて + ならない",
+      "いAくて + ならない",
+      "なAで + ならない"
     ],
     "grammar": [
       "ならない"
@@ -2437,6 +2590,24 @@
       {
         "originalStructure": "Vて + ならない",
         "before": "Vて",
+        "grammarCore": "ならない",
+        "after": ""
+      },
+      {
+        "originalStructure": "Vたくて + ならない",
+        "before": "Vたくて",
+        "grammarCore": "ならない",
+        "after": ""
+      },
+      {
+        "originalStructure": "いAくて + ならない",
+        "before": "いAくて",
+        "grammarCore": "ならない",
+        "after": ""
+      },
+      {
+        "originalStructure": "なAで + ならない",
+        "before": "なAで",
         "grammarCore": "ならない",
         "after": ""
       }
@@ -2666,8 +2837,8 @@
     ],
     "grammar": [
       "をきっかけに",
-      "にして",
-      "として"
+      "をきっかけにして",
+      "をきっかけとして"
     ],
     "meaningVietnamese": "Nhân dịp…, lấy… làm cơ hộihoặcbước ngoặt",
     "variants": [
