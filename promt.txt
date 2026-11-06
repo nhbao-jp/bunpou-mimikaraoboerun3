@@ -1,0 +1,166 @@
+Hãy xây dựng một website tự học ngữ pháp tiếng Nhật bằng dữ liệu trong file JSON đính kèm `grammar-data.json`.
+
+## Công nghệ bắt buộc
+
+- Chỉ sử dụng HTML, JavaScript thuần (Vanilla JavaScript) và Bootstrap.
+- Không sử dụng React, Vue, Angular, TypeScript, jQuery hoặc framework/thư viện frontend khác.
+- Không dùng backend; ứng dụng chạy trực tiếp trên trình duyệt.
+- Dùng các component và utility class của Bootstrap để dựng giao diện, hạn chế CSS riêng.
+- Nếu dự án hiện tại dùng framework khác, hãy chuyển phần ứng dụng này sang HTML và JavaScript thuần.
+
+## 1. Trước khi viết code
+
+- Kiểm tra cấu trúc dự án và sử dụng framework, công cụ build, cách chạy hiện có nếu dự án đã được khởi tạo.
+- Tìm và đọc file `grammar-data.json`; dùng file này làm nguồn dữ liệu chính.
+- Không tự tạo lại hoặc lược bỏ dữ liệu ngữ pháp.
+- Nếu cần đổi tên hoặc vị trí file dữ liệu để ứng dụng đọc được, hãy giữ nguyên toàn bộ nội dung.
+- Nếu chưa có dự án, hãy tạo ứng dụng web đơn giản, dễ chạy và dễ bảo trì.
+- Frontend phải sử dụng Bootstrap.
+- Tự thiết kế UX/UI đẹp, rõ ràng, hiện đại, responsive trên desktop và mobile.
+- Tất cả nội dung chính phải được căn giữa và đặt ở trung tâm màn hình.
+
+## 2. Cấu trúc dữ liệu cần hỗ trợ
+
+Dữ liệu là một mảng các mục ngữ pháp. Mỗi mục có các trường chính:
+
+- `id`
+- `structures`: danh sách cấu trúc đầy đủ
+- `grammar`: danh sách cách viết ngữ pháp cần hiển thị
+- `meaningVietnamese`: ý nghĩa tiếng Việt
+- `variants`: danh sách các cấu trúc hợp lệ
+
+Mỗi phần tử trong `variants` có thể có:
+
+- `originalStructure`
+- `before`
+- `grammarCore`
+- `after`
+- Có thể có `meaningVietnamese` riêng cho variant
+
+Lưu ý:
+
+- `before`, `after`, và đôi khi `grammarCore` có thể là chuỗi hoặc mảng chuỗi.
+- Chuỗi rỗng `""` trong `after` nghĩa là cấu trúc đó không có thành phần after.
+- Chuẩn hóa dữ liệu để có thể xử lý chuỗi và mảng thống nhất, nhưng không làm mất lựa chọn nào.
+- Không giả định `id` liên tục hoặc trùng với vị trí của mục trong mảng.
+- Nếu variant có `meaningVietnamese` riêng, dùng ý nghĩa đó khi phù hợp; nếu không, dùng ý nghĩa ở mục cha.
+
+## 3. Tạo danh sách lựa chọn dùng trong Luyện tập
+
+Từ toàn bộ `variants` trong dữ liệu:
+
+- Tạo một danh sách `List-before` chứa tất cả thành phần `before` khác nhau.
+- Tạo một danh sách `List-after` chứa tất cả thành phần `after` khác nhau, bỏ qua giá trị rỗng.
+- Nếu một trường là mảng, đưa từng phần tử vào danh sách.
+- Loại bỏ phần tử trùng lặp theo đúng chuỗi; giữ thứ tự xuất hiện đầu tiên trong JSON.
+- Hiển thị danh sách lựa chọn dễ đọc và dễ thao tác.
+- Không tự sửa nội dung các thành phần lấy từ JSON.
+
+## 4. Điều hướng chính
+
+Tạo hai tab hoặc nút điều hướng:
+
+- **Học**
+- **Luyện tập**
+
+Nhấn vào mỗi tab sẽ chuyển sang trang tương ứng mà không tải lại toàn bộ ứng dụng nếu framework hiện có hỗ trợ.
+
+Hiển thị rõ tab đang được chọn.
+
+## 5. Trang Học
+
+Hiển thị một card lớn ở chính giữa màn hình. Bên trong card, sắp xếp từ trên xuống theo thứ tự:
+
+1. `grammar`
+2. `meaningVietnamese`
+3. Thành phần `before`
+4. Thành phần `after`
+
+Yêu cầu hiển thị:
+
+- Với `grammar` là mảng, hiển thị đầy đủ các phần tử một cách rõ ràng.
+- Dựa trên `variants` để hiển thị các thành phần `before` và `after`; không giả định mục dữ liệu chỉ có một variant.
+- Nếu một variant có nhiều lựa chọn trong `before` hoặc `after`, hiển thị đầy đủ các lựa chọn.
+- Có nút hoặc chỉ báo vị trí hiện tại, ví dụ: “12 / 107”.
+- Nhấn phím mũi tên phải để chuyển đến mục tiếp theo.
+- Nhấn phím mũi tên trái để chuyển về mục trước đó.
+- Ở đầu hoặc cuối danh sách, không chuyển sang mục không tồn tại; có thể vô hiệu hóa nút tương ứng.
+- Có thể bổ sung nút Trước / Tiếp để người dùng thao tác bằng chuột hoặc màn hình cảm ứng.
+- Đảm bảo các phím tắt hoạt động ổn định và không gây cuộn trang ngoài ý muốn.
+
+## 6. Trang Luyện tập
+
+Mỗi lượt luyện tập hiển thị một card ở chính giữa màn hình.
+
+Trong card:
+
+- Hiển thị `grammar` của mục hiện tại ở vị trí nổi bật.
+- Hiển thị vùng chọn thành phần `before`, lấy lựa chọn từ `List-before`.
+- Hiển thị vùng chọn thành phần `after`, lấy lựa chọn từ `List-after`.
+- Hiển thị ý nghĩa tiếng Việt sau khi người dùng kiểm tra bằng Enter.
+- Có thể hiển thị số thứ tự mục hiện tại và tổng số mục.
+- Thiết kế lựa chọn thành phần dưới dạng nút có trạng thái rõ ràng: chưa chọn, đã chọn, đúng, sai.
+- Mỗi lượt chọn tối đa một thành phần before và một thành phần after. Người dùng có thể đổi lựa chọn trước khi kiểm tra.
+- Cho phép để trống lựa chọn after. Nếu variant đúng không có after thì để trống là đáp án đúng; chọn một thành phần after khi đáp án đúng không có after phải được đánh dấu sai.
+
+## 7. Chấm đáp án
+
+Khi người dùng nhấn Enter:
+
+- So sánh lựa chọn của người dùng với các `variants` thuộc mục hiện tại.
+- Một đáp án được xem là đúng nếu có ít nhất một variant thỏa mãn đồng thời:
+  - Lựa chọn before khớp với một giá trị hợp lệ của `before` trong variant đó.
+  - Lựa chọn after khớp với một giá trị hợp lệ của `after` trong chính variant đó.
+- Nếu `before` hoặc `after` là mảng, mỗi phần tử là một lựa chọn hợp lệ cho phần tương ứng.
+- Nếu `after` rỗng thì người dùng phải không chọn after.
+- Phải so khớp before và after trên cùng một variant; không ghép before của variant này với after của variant khác.
+- Không phân biệt đúng sai dựa trên vị trí trong danh sách lựa chọn.
+- Nếu đúng, hiện trạng thái đúng bằng màu sắc và thông báo tích cực.
+- Nếu sai, hiển thị phần đúng/sai ngay tại vị trí lựa chọn:
+  - Phần sai được đánh dấu màu đỏ.
+  - Phần đã chọn đúng vẫn giữ trạng thái đúng.
+  - Nếu người dùng bỏ sót một phần bắt buộc, đánh dấu rõ phần còn thiếu.
+- Sau khi kiểm tra, hiển thị ý nghĩa tiếng Việt của mục hiện tại.
+
+## 8. Sửa đáp án bằng Space
+
+Sau khi đáp án đã được kiểm tra và có phần sai:
+
+- Nhấn Space để thay thế phần sai bằng đáp án chính xác và chạy hiệu ứng chuyển đổi ngắn, mượt.
+- Giữ nguyên phần người dùng đã chọn đúng.
+- Nếu người dùng đã chọn after nhưng đáp án chính xác không có after, Space sẽ xóa lựa chọn đó kèm hiệu ứng.
+- Nếu người dùng bỏ sót phần bắt buộc, Space sẽ điền đáp án phù hợp.
+- Nếu có nhiều variant hợp lệ, chọn variant phù hợp nhất với phần người dùng đã trả lời đúng để chỉ sửa phần sai cần thiết. Nếu có nhiều đáp án phù hợp ngang nhau, dùng variant xuất hiện trước trong JSON.
+- Sau khi sửa, hiển thị trạng thái đáp án hoàn chỉnh.
+- Space chỉ dùng để sửa sau khi đã kiểm tra đáp án sai; ngăn trình duyệt cuộn trang khi phím này đang được dùng cho chức năng trên.
+
+## 9. Điều hướng trong Luyện tập
+
+- Nhấn phím mũi tên phải để chuyển đến mục tiếp theo.
+- Nhấn phím mũi tên trái để chuyển về mục trước đó.
+- Có nút Trước / Tiếp để hỗ trợ chuột và màn hình cảm ứng.
+- Khi chuyển mục, xóa lựa chọn và trạng thái kết quả của lượt trước.
+- Không chuyển sang mục không tồn tại ở đầu hoặc cuối danh sách.
+- Enter dùng để kiểm tra đáp án hiện tại.
+- Space dùng để tự sửa phần sai sau khi đã kiểm tra.
+- Không để các phím tắt chạy khi người dùng đang thao tác với trường nhập liệu nếu ứng dụng có thêm trường nhập liệu trong tương lai.
+
+## 10. Thiết kế và trải nghiệm
+
+Tự quyết định thiết kế UX/UI phù hợp với ứng dụng học ngữ pháp:
+
+- Giao diện sạch, tập trung vào nội dung học.
+- Card dễ đọc, có khoảng cách và thứ bậc thông tin rõ ràng.
+- Trên màn hình nhỏ, nội dung không tràn ngang; các lựa chọn có thể xuống dòng.
+- Dùng Bootstrap cho layout, button, card, spacing và responsive.
+- Dùng màu sắc nhất quán cho các trạng thái chưa chọn, đã chọn, đúng và sai.
+- Hiệu ứng chuyển mục và thay đáp án ngắn, nhẹ; ưu tiên khả năng truy cập và chuyển động dễ chịu.
+- Có hướng dẫn phím tắt ngắn, dễ tìm trên giao diện.
+
+## 11. Hoàn thiện
+
+- Xử lý trạng thái dữ liệu lỗi hoặc không tải được JSON bằng thông báo dễ hiểu.
+- Tránh sửa nội dung dữ liệu gốc trong quá trình hiển thị hoặc chấm đáp án.
+- Viết code có cấu trúc rõ ràng, tách phần đọc dữ liệu, chuẩn hóa dữ liệu, điều hướng, lựa chọn và chấm điểm.
+- Hoàn thiện ứng dụng để có thể chạy theo cách phù hợp với dự án hiện tại.
+- Cuối cùng, tóm tắt ngắn gọn những gì đã làm và cách chạy ứng dụng.
